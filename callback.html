@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개인자가 있는 함수</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="num">
+        <button>구구단 나와라</button>
+    </div>
+    <div class="content">
+       숫자를 넣고 버튼을 클릭해보세요.
+    </div>   
+    <script>
+       const obj = document.getElementsByClassName("content").item(0); //두번째의 태그객체
+       const trigger = document.querySelector("#box button"); // 트리거
+       const numinput = document.getElementById("num");
+
+       trigger.addEventListener('click', function(){
+        var num = numinput.value;
+        gugudan(num, obj);
+       })       
+
+        function gugudan(dan, ele){ // 첫번째는 숫자, 두번째는 태그객체
+           var tags = "";
+           for(var i = 1; i <10; i++){
+               tags +=`<p>${dan}X${i}=${dan * i}</p>`;
+           }
+           ele.innerHTML = tags ;
+        }
+    </script>
+</body>
+</html>

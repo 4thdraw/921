@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>핸드폰 </h3>
+    <p id="hd"></p>
+    <p id="hi"></p>
+
+    <script>
+        const myhd = ["010","7128","1041"];
+        const hdtag = document.getElementById("hd");
+        hdtag.innerHTML = myhd; //, 따라들어옴
+        hdtag.innerHTML = `${myhd[0]} - ${myhd[1]} - ${myhd[2]}`;
+        hdtag.innerHTML = myhd.join("-"); // 배열을 문자로 
+
+        const hello = "안녕하세요.|여기서|두줄처리되면|좋겠다.";
+        const hi = document.getElementById("hi");
+        const helloArr = hello.split("|");
+
+        for(i in helloArr){
+            hi.innerHTML += helloArr[i]+"<br>";
+        }
+
+    </script>
+    
+</body>
+</html>
